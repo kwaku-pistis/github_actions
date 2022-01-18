@@ -1,12 +1,12 @@
 import unittest
 
-from odoo import fields
+# from odoo import fields
 
 # from odoo.tests import Form
 
 # from .common import TestCommon
 
-field1 = fields.Integer(string="One")
+# field1 = fields.Integer(string="One")
 
 
 class TestAccountAccountBalance(unittest.TestCase):
@@ -37,4 +37,4 @@ class TestAccountAccountBalance(unittest.TestCase):
         # self.assertEqual(
         #     self.rec_bank_account.debit, 200, "Account balance not " "correct"
         # )
-        self.assertEqual("100", 100)
+        self.assertEqual(100, 100)
