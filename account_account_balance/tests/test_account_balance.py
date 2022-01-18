@@ -1,9 +1,10 @@
+import unittest
+
 from odoo import fields
+
 # from odoo.tests import Form
 
 # from .common import TestCommon
-
-import unittest
 
 field1 = fields.Integer(string="One")
 
