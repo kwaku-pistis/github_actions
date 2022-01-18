@@ -1,5 +1,5 @@
-# from odoo import fields
-# from odoo.tests import Form
+from odoo import fields
+from odoo.tests import Form
 
 # from .common import TestCommon
 
