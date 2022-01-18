@@ -13,8 +13,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Run Flake8
-        uses: ./.github/workflows/flake8-lint.yml
+#      - name: Run Flake8
+#        uses: ./.github/workflows/flake8-lint.yml
 
       - name: Run Super Linter
         uses: github/super-linter@v4.8.5
