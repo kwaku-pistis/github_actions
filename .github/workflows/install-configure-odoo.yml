@@ -78,7 +78,7 @@ jobs:
       - name: Start Odoo
         run: |
           pwd
-          cd /odoo/odoo
+          cd odoo14/odoo
           ./odoo-bin -c /etc/odoo.conf
 
       - name: Print Working Directory
