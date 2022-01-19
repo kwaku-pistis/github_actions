@@ -41,7 +41,7 @@ jobs:
       - name: Install Python pip Dependencies
         run: | 
           sudo apt-get install libpq-dev python-dev libxml2-dev libxslt1-dev libldap2-dev libsasl2-dev libffi-dev
-          sudo -H pip3 install -r https://raw.githubusercontent.com/odoo/odoo/master/requirements.txt
+          sudo -H pip3 install -r https://raw.githubusercontent.com/odoo/odoo/14.0/requirements.txt
 
       - name: Install Other Required Packages
         run: |
