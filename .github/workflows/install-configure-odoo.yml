@@ -64,7 +64,7 @@ jobs:
       - name: Install Odoo
         run: |
           mkdir odoo
-          cd /odoo
+          cd odoo
           git clone –b 14.0 https://www.github.com/odoo/odoo odoo-14
 
 #      - name: Setting Permissions on Home Folder
