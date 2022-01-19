@@ -63,8 +63,7 @@ jobs:
 
       - name: Install Odoo
         run: |
-          sudo apt-get install git
-          sudo git clone –depth 1 –branch 14.0 https://www.github.com/odoo/odoo /odoo/odoo-server
+          git clone --depth 1 –b 14.0 https://www.github.com/odoo/odoo /odoo/odoo-server
 
 #      - name: Setting Permissions on Home Folder
 #        run: |
