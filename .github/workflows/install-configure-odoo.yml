@@ -30,9 +30,9 @@ jobs:
         run: |
           sudo apt-get install postgresql -y
 
-      - name: Create Odoo User for Postgresql
-        run: |
-          sudo su – postgres -c “createuser -s odoo” 2> /dev/null || true
+#      - name: Create Odoo User for Postgresql
+#        run: |
+#          sudo su – postgres -c “createuser -s odoo” 2> /dev/null || true
 
 #      - name: Install Python Dependencies
 #        run: |
@@ -51,6 +51,7 @@ jobs:
       - name: Install WKHTMLTOPDF
         run: |
           sudo apt-get install xfonts-75dpi
+          sudo apt-get install xfonts-base
           sudo wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6-1/wkhtmltox_0.12.6-1.bionic_amd64.deb
           sudo dpkg -i wkhtmltox_0.12.6-1.bionic_amd64.deb
           sudo cp /usr/local/bin/wkhtmltoimage /usr/bin/wkhtmltoimage
@@ -78,8 +79,6 @@ jobs:
           sudo su root -c “printf ‘xmlrpc_port = 8069\n’ >> /etc/odoo-server.conf”
           sudo su root -c “printf ‘logfile = /var/log/odoo/odoo-server.log\n’ >> /etc/odoo-server.conf”
           sudo su root -c “printf ‘addons_path=/odoo/odoo-server/addons\n’ >> /etc/odoo-server.conf”
-          sudo chown odoo:odoo /etc/odoo-server.conf
-          sudo chmod 640 /etc/odoo-server.conf
 
       - name: Start Odoo
         run: |
