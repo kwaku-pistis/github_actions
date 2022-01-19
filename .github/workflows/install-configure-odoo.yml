@@ -60,7 +60,6 @@ jobs:
       - name: Create Log Directory
         run: |
           sudo mkdir /var/log/odoo
-          sudo chown odoo:odoo /var/log/odoo
 
       - name: Install Odoo
         run: |
@@ -73,17 +72,12 @@ jobs:
           
       - name: Create Server Config
         run: |
-          sudo touch /etc/odoo-server.conf
-          sudo su root -c “printf ‘[options] \n; This is the password that allows database operations:\n’ >> /etc/odoo-server.conf”
-          sudo su root -c “printf ‘admin_passwd = admin\n’ >> /etc/odoo-server.conf”
-          sudo su root -c “printf ‘xmlrpc_port = 8069\n’ >> /etc/odoo-server.conf”
-          sudo su root -c “printf ‘logfile = /var/log/odoo/odoo-server.log\n’ >> /etc/odoo-server.conf”
-          sudo su root -c “printf ‘addons_path=/odoo/odoo-server/addons\n’ >> /etc/odoo-server.conf”
+          sudo cp ./odoo.conf /etc/.
 
       - name: Start Odoo
         run: |
           cd /odoo/odoo-server
-          ./odoo-bin -c /etc/odoo-server.conf
+          ./odoo-bin -c /etc/odoo.conf
 
       - name: Print Working Directory
         run: |
