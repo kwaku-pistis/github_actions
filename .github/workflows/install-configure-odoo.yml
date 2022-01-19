@@ -63,7 +63,8 @@ jobs:
 
       - name: Install Odoo
         run: |
-          git clone --depth 1 –b 14.0 https://www.github.com/odoo/odoo /odoo/odoo-server
+          cd /odoo
+          git clone –b 14.0 https://www.github.com/odoo/odoo odoo-14
 
 #      - name: Setting Permissions on Home Folder
 #        run: |
@@ -75,7 +76,7 @@ jobs:
 
       - name: Start Odoo
         run: |
-          cd /odoo/odoo-server
+          cd /odoo/odoo-14
           ./odoo-bin -c /etc/odoo.conf
 
       - name: Print Working Directory
