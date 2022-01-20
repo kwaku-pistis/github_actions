@@ -50,6 +50,12 @@ jobs:
           sudo mkdir /var/log/odoo
           sudo touch /var/log/odoo/odoo.log
 
+      - name: Upload Log File
+        uses: actions/upload-artifact@v2
+        with:
+          name: odoo-log-file
+          path: /var/log/odoo/odoo.log
+
       - name: Install Odoo
         run: |
           mkdir odoo14
@@ -72,10 +78,10 @@ jobs:
         run: |
           wget localhost:8069
 
-      - name: Read wget file
-        run: cat index.html
+#      - name: Read wget file
+#        run: cat index.html
 
-      - name: Print Working Directory
-        run: |
-          pwd
-          tail -f /var/log/odoo/odoo.log
+#      - name: Print Working Directory
+#        run: |
+#          pwd
+#          tail -f /var/log/odoo/odoo.log
