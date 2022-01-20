@@ -79,7 +79,8 @@ jobs:
         run: |
           pwd
           cd odoo14/odoo
-          ./odoo-bin -c /etc/odoo.conf
+          pip3 install PyPDF2
+          sudo ./odoo-bin -c /etc/odoo.conf
 
       - name: Print Working Directory
         run: |
