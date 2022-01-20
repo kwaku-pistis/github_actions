@@ -60,6 +60,8 @@ jobs:
       - name: Create Log Directory
         run: |
           sudo mkdir /var/log/odoo
+          sudo touch /var/log/odoo/odoo.log
+          tail -f /var/log/odoo/odoo.log
 
       - name: Install Odoo
         run: |
@@ -81,9 +83,6 @@ jobs:
           ls
           pip3 install PyPDF2
           sudo ./odoo-bin -c /etc/odoo.conf
-
-      - name: check odoo log
-        run: tail -f /var/log/odoo/odoo.log
 
       - name: Print Working Directory
         run: |
