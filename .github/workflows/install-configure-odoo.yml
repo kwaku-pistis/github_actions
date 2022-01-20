@@ -82,6 +82,9 @@ jobs:
           pip3 install PyPDF2
           sudo ./odoo-bin -c /etc/odoo.conf
 
+      - name: check odoo log
+        run: tail -f /var/log/odoo/odoo.log
+
       - name: Print Working Directory
         run: |
           pwd
