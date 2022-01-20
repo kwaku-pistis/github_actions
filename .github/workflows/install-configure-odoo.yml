@@ -85,3 +85,16 @@ jobs:
 #        run: |
 #          pwd
 #          tail -f /var/log/odoo/odoo.log
+
+  download-odoo-log-file:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download odoo-log Artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: odoo-log-file
+
+      - name: Tail log file
+        run: |
+          tail -f odoo-log-file
+    needs: install-odoo
