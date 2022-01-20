@@ -69,7 +69,7 @@ jobs:
         run: |
           cd odoo14/odoo
           pip3 install PyPDF2
-          sudo ./odoo-bin -c /etc/odoo.conf &
+          sudo ./odoo-bin -i -c /etc/odoo.conf &
           ifconfig
 
       - name: Check if odoo runs locally
