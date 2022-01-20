@@ -76,7 +76,7 @@ jobs:
 
       - name: Check if odoo runs locally
         run: |
-          wget localhost:8069
+          curl localhost:8069 >> output.txt
 
 #      - name: Read wget file
 #        run: cat index.html
