@@ -96,5 +96,5 @@ jobs:
 
       - name: Tail log file
         run: |
-          tail -f odoo-log-file
+          tail -f odoo.log
     needs: install-odoo
