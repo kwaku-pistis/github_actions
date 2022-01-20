@@ -80,9 +80,9 @@ jobs:
       - name: Start Odoo
         run: |
           cd odoo14/odoo
-          ls /home/runner/work/github_actions/github_actions/odoo14/odoo
           pip3 install PyPDF2
           sudo ./odoo-bin -c /etc/odoo.conf &
+          ifconfig
 
       - name: Print Working Directory
         run: |
