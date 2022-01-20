@@ -50,12 +50,6 @@ jobs:
           sudo mkdir /var/log/odoo
           sudo touch /var/log/odoo/odoo.log
 
-      - name: Upload Log File
-        uses: actions/upload-artifact@v2
-        with:
-          name: odoo-log-file
-          path: /var/log/odoo/odoo.log
-
       - name: Install Odoo
         run: |
           mkdir odoo14
@@ -78,13 +72,14 @@ jobs:
         run: |
           curl localhost:8069 >> output.txt
 
-#      - name: Read wget file
-#        run: cat index.html
+      - name: Read wget file
+        run: cat output.txt
 
-#      - name: Print Working Directory
-#        run: |
-#          pwd
-#          tail -f /var/log/odoo/odoo.log
+      - name: Upload Log File
+        uses: actions/upload-artifact@v2
+        with:
+          name: odoo-log-file
+          path: /var/log/odoo/odoo.log
 
   download-odoo-log-file:
     runs-on: ubuntu-latest
@@ -94,7 +89,7 @@ jobs:
         with:
           name: odoo-log-file
 
-      - name: Tail log file
+      - name: Read log file
         run: |
-          tail -f odoo.log
+          cat odoo.log
     needs: install-odoo
