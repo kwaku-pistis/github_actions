@@ -9,12 +9,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Display environment Variables
-        run: |
-          echo $GITHUB_SERVER_URL
-          echo $GITHUB_REPOSITORY
-          echo $GITHUB_RUN_ID
-
       - name: Update Server
         run: |
           sudo apt-get update
@@ -77,10 +71,11 @@ jobs:
 
       - name: Check if odoo runs locally
         run: |
-          curl localhost:8069 >> output.txt
+          wget localhost:8069
+#          curl localhost:8069 >> output.txt
 
       - name: Read Output file
-        run: cat output.txt
+        run: cat index.html
 
       - name: Upload Log File
         uses: actions/upload-artifact@v2
