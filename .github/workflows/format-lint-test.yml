@@ -13,19 +13,19 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-#      - name: Run Flake8
-#        uses: ./.github/workflows/flake8-lint.yml
-
       - name: Run Super Linter
         uses: github/super-linter@v4.8.5
         env:
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.8
+#      - name: Set up Python
+#        uses: actions/setup-python@v2
+#        with:
+#          python-version: 3.8
+
+      - name: Install and Configure Odoo
+        uses: ./.github/workflows/install-configure-odoo.yml
 
       - name: Install dependencies
         run: |
