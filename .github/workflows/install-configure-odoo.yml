@@ -9,8 +9,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: check git available on system
-        run: which git
+      - name: Display environment Variables
+        run: |
+          echo $GITHUB_SERVER_URL
+          echo $GITHUB_REPOSITORY
+          echo $GITHUB_RUN_ID
 
       - name: Update Server
         run: |
