@@ -10,9 +10,6 @@ jobs:
   format-code:
     runs-on: self-hosted
     steps:
-      - name: Current User
-        run: echo $USER
-
       - name: Checkout
         uses: actions/checkout@v2
 
