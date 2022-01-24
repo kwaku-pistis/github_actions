@@ -10,11 +10,11 @@ jobs:
   format-code:
     runs-on: self-hosted
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
       - name: Current User
         run: echo $USER
+
+      - name: Checkout
+        uses: actions/checkout@v2
 
       - name: Run Super Linter
         uses: github/super-linter@v4
