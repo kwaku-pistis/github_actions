@@ -29,8 +29,8 @@ jobs:
     steps:
       - name: Assign Folder To User1
         run: |
-          sudo chown -R user1:user1 _work
-          sudo chown -R user1:user1 _work/github_actions/github_actions/.mypy_cache
+          sudo chown -R user1:user1 /home/user1/actions-runner/_work
+          sudo chown -R user1:user1 /home/user1/actions-runner/_work/github_actions/github_actions/.mypy_cache
 
       - name: Checkout
         uses: actions/checkout@v2
