@@ -22,6 +22,11 @@ jobs:
   install-configure-odoo:
     runs-on: self-hosted
     steps:
+      - name: Assign Folder To User1
+        run: |
+          sudo chown -R user1:user1 _work
+          sudo chown -R user1:user1 _work/github_actions/github_actions/.mycache
+
       - name: Checkout
         uses: actions/checkout@v2
 
