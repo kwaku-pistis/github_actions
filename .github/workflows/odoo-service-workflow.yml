@@ -12,12 +12,12 @@ jobs:
         ports:
           - 8069:8069
 
-      postgres-db:
-        image: postgres
-        env:
-          POSTGRES_PASSWORD: odoo
-          POSTGRES_DB: postgres
-          POSTGRES_USER: odoo
+#      postgres-db:
+#        image: postgres
+#        env:
+#          POSTGRES_PASSWORD: odoo
+#          POSTGRES_DB: postgres
+#          POSTGRES_USER: odoo
 
     steps:
       - name: Assign Folder To User1
@@ -29,5 +29,5 @@ jobs:
 
       - name: Check if odoo runs locally
         run: |
-          wget odoo:8069
+          wget localhost:8069
           cat index.html
