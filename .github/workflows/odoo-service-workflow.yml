@@ -8,9 +8,17 @@ jobs:
 
     services:
       odoo:
-        image: odoo
+        image: odoo:14.0
+        depends_on: postgres-db
         ports:
           - 8069:8069
+
+      postgres-db:
+        image: postgres
+        env:
+          POSTGRES_PASSWORD: odoo
+          POSTGRES_DB: postgres
+          POSTGRES_USER: odoo
 
     steps:
       - name: Assign Folder To User1
