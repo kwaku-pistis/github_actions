@@ -1,0 +1,13 @@
+name: Odoo Service
+
+on: push
+
+jobs:
+  odoo-docker:
+    runs-on: self-hosted
+
+    services:
+      odoo:
+        image: odoo
+        ports:
+          - 8069:8069
