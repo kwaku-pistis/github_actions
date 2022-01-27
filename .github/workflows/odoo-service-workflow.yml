@@ -9,7 +9,7 @@ jobs:
     services:
       odoo:
         image: odoo:14.0
-        depends_on: postgres-db
+#        depends_on: postgres-db
         ports:
           - 8069:8069
 
