@@ -11,3 +11,7 @@ jobs:
         image: odoo
         ports:
           - 8069:8069
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
