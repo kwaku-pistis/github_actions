@@ -29,5 +29,5 @@ jobs:
 
       - name: Check if odoo runs locally
         run: |
-          wget localhost:8069
+          wget odoo:8069
           cat index.html
