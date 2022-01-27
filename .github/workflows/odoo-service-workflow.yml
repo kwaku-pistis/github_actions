@@ -13,5 +13,9 @@ jobs:
           - 8069:8069
 
     steps:
+      - name: Assign Folder To User1
+        run: |
+          sudo chown -R user1:user1 /home/user1/actions-runner/_work
+
       - name: Checkout
         uses: actions/checkout@v2
